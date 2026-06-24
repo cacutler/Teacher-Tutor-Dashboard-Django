@@ -15,59 +15,60 @@ A django full-stack application for independent tutors and teachers to use with 
 
 **Users**
 
-- ID
-- First Name
-- Middle Name
-- Last Name
-- Username
-- Email
-- Password
-- Birthdate
-- Gender
-- Status
-- Assignment Submissions
-- Tutoring Appointments
+- ID (UUID)
+- First Name (String)
+- Middle Name (String)
+- Last Name (String)
+- Username (String)
+- Email (String)
+- Password (String)
+- Birthdate (Date)
+- Gender (String)
+- Status (List of strings)
+- Assignment Submissions (List of assignment UUIDs)
+- Tutoring Appointments (List of appointment UUIDs)
 
 **Programs**
 
-- ID
-- Teacher ID
-- Courses
-- Description
-- Title
+- ID (UUID)
+- Teacher ID (User UUID)
+- Courses (List of course UUIDs)
+- Description (Text)
+- Title (String)
 
 **Courses**
 
-- ID
-- Program ID
-- Teacher ID
-- Title
-- Course Prequisites
-- Subject
-- Assignments
+- ID (UUID)
+- Program ID (UUID)
+- Teacher ID (UUID)
+- Title (String)
+- Course Prequisites (List of course UUIDs)
+- Subject (String)
+- Description (Text)
+- Assignments (List of assignment UUIDs)
 
 **Tutoring Appointments**
 
-- ID
-- Tutor ID
-- Tutee ID
-- Course
-- Notes
-- Report
-- Title
+- ID (UUID)
+- Tutor ID (User UUID)
+- Tutee ID (User UUID)
+- Course (Course UUID)
+- Notes (Text)
+- Report (Text)
+- Title (String)
 
 **Assignments**
 
-- ID
-- Teacher ID
-- Course ID
-- Title
-- Description
-- Submissions
+- ID (UUID)
+- Teacher ID (User UUID)
+- Course ID (Course UUID)
+- Title (String)
+- Description (Text)
+- Submissions (List of submission UUIDs)
 
 **Submissions**
 
-- ID
-- Assignment ID
-- Student ID
-- Entry
+- ID (UUID)
+- Assignment ID (Assignment UUID)
+- Student ID (User UUID)
+- Entry (Text or File Upload)
