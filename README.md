@@ -19,6 +19,9 @@ A django full-stack application for independent tutors and teachers to use with 
 - First Name
 - Middle Name
 - Last Name
+- Username
+- Email
+- Password
 - Birthdate
 - Gender
 - Status
