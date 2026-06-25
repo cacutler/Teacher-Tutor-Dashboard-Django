@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h2>Welcome, {{user.first_name|default:user.username}}</h2>
+{% if programs_taught %}
+<div class="card">
+    <h3>Programs you teach</h3>
+    <ul>
+        {% for program in programs_taught %}
+            <li>{{program.title}}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+{% if assignments_created %}
+<div class="card">
+    <h3>Assignments you created</h3>
+    <table>
+        <tr><th>Title</th><th>Course</th></tr>
+        {% for a in assignments_created %}
+        <tr>
+            <td><a href="{% url 'assignment_detail' a.pk %}">{{a.title}}</a></td>
+            <td>{{a.course.title}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endif %}
+<div class="card">
+    <h3>Your submissions</h3>
+    {% if my_submissions %}
+    <table>
+        <tr><th>Assignment</th><th>Submitted</th></tr>
+        {% for s in my_submissions %}
+        <tr>
+            <td><a href="{% url 'assignment_detail' s.assignment.pk %}">{{s.assignment.title}}</a></td>
+            <td>{{s.submitted_at}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p class="muted">No submissions yet.</p>
+    {% endif %}
+</div>
+{% if tutoring_as_tutor or tutoring_as_tutee %}
+<div class="card">
+    <h3>Tutoring appointments</h3>
+    <ul>
+        {% for t in tutoring_as_tutor %}
+            <li>Tutoring {{t.tutee.username}} — {{t.title}}</li>
+        {% endfor %}
+        {% for t in tutoring_as_tutee %}
+            <li>Being tutored by {{t.tutor.username}} — {{t.title}}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+{% endblock %}

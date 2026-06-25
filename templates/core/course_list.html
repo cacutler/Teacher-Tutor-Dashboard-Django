@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Courses{% endblock %}
+{% block content %}
+<h2>Courses</h2>
+{% for course in courses %}
+<div class="card">
+    <h3><a href="{% url 'course_detail' course.pk %}">{{course.title}}</a></h3>
+    <p class="muted">{{course.program.title}} · taught by {{course.teacher.username}}</p>
+    <p>{{course.description}}</p>
+</div>
+{% empty %}
+<p class="muted">No courses yet.</p>
+{% endfor %}
+{% endblock %}
