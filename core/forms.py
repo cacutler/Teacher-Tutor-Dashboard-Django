@@ -5,5 +5,5 @@ User = get_user_model()
 class RegistrationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = User
-        fields = ("username", "email", "middle_name", "birthdate", "gender")
+        fields = ("username", "email", "first_name", "middle_name", "last_name", "birthdate", "gender")
         widgets = {"birthdate": forms.DateInput(attrs={"type": "date"})}
