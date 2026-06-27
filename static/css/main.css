@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    background: #f7f7f9;
+    color: #1a1a1a;
+}
+header {
+    background: #1f2933;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header a {
+    color: white;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.card h3 {
+    margin-top: 0;
+}
+a.button, button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+.muted {
+    color: #6b7280; font-size: 0.9rem;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    text-align: left;
+    padding: 0.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+.auth-container h1, .auth-links {
+    text-align: center;
+}
+.auth-container h1 {
+    margin-bottom: 1rem;
+}
+.auth-links {
+    margin-top: 1rem;
+}
+form {
+    border: solid black 1px;
+    width: 50%;
+    margin: auto;
+    border-radius: 8px;
+}
+button {
+    display: block;
+    margin: 1rem auto;
+}
+.form-row {
+    margin: 1rem;
+}
+.field-help {
+    font-size: small;
+    color: gray;
+}
+.field-errors {
+    font-size: small;
+    color: red;
+}
+.field-help ul, .field-errors ul {
+    padding: 0 1rem;
+}
+input {
+    padding: 0.25rem;
+}

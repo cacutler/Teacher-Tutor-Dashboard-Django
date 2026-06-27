@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Dashboard{% endblock %}
 {% block content %}
-<h2>Welcome, {{user.first_name|default:user.username}}</h2>
+<h2>Welcome, {{user.first_name | default:user.username}}</h2>
 {% if programs_taught %}
 <div class="card">
     <h3>Programs you teach</h3>

@@ -1,66 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Teacher Tutor Dashboard{% endblock %}</title>
-    <style>
-        body {
-            font-family: system-ui, sans-serif;
-            margin: 0;
-            background: #f7f7f9;
-            color: #1a1a1a;
-        }
-        header {
-            background: #1f2933;
-            color: white;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        header a {
-            color: white;
-            text-decoration: none;
-            margin-right: 1rem;
-        }
-        main {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        .card {
-            background: white;
-            border-radius: 8px;
-            padding: 1.25rem;
-            margin-bottom: 1rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-        }
-        .card h3 {
-            margin-top: 0;
-        }
-        a.button, button {
-            background: #2563eb;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            text-decoration: none;
-            display: inline-block;
-            cursor: pointer;
-        }
-        .muted {
-            color: #6b7280; font-size: 0.9rem;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            text-align: left;
-            padding: 0.5rem;
-            border-bottom: 1px solid #e5e7eb;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
 <body>
     <header>
@@ -70,7 +14,7 @@
         </div>
         <div>
             {% if user.is_authenticated %}
-                <span class="muted" style="color:#cbd5e1;">{{user.username}}</span>
+                <span class="muted" style="color:#cbd5e1;">{{user.username}}</span>{% comment %}Figure out how to show the user's first name or nickname (if that data logic gets added later){% endcomment %}
                 <form action="{% url 'logout' %}" method="post" style="display: inline;">
                     {% csrf_token %}
                     <button type="submit">Log out</button>
