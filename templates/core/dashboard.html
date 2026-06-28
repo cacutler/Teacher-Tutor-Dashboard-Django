@@ -1,11 +1,12 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}Dashboard{% endblock %}
 {% block content %}
-<h2>Welcome, {{user.first_name | default:user.username}}</h2>
+<h2 style="margin-bottom: 1rem;">Welcome, {{user.first_name | default:user.username}}</h2>
 {% if programs_taught %}
 <div class="card">
     <h3>Programs you teach</h3>
-    <ul>
+    <ul style="margin: 0.5rem 1rem;">
         {% for program in programs_taught %}
             <li>{{program.title}}</li>
         {% endfor %}
@@ -39,7 +40,7 @@
         {% endfor %}
     </table>
     {% else %}
-    <p class="muted">No submissions yet.</p>
+    <p class="muted" style="margin: 0.5rem 0;">No submissions yet.</p>
     {% endif %}
 </div>
 {% if tutoring_as_tutor or tutoring_as_tutee %}
