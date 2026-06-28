@@ -2,6 +2,8 @@
 
 A django full-stack application for independent tutors and teachers to use with their tutees and students.
 
+![Main Page](TeacherTutorDashboard.png)
+
 ## Features
 
 - Allows teachers to create courses/programs and related assignments
