@@ -73,6 +73,7 @@ form {
     width: 50%;
     margin: auto;
     border-radius: 8px;
+    background-color: #33291F;
 }
 button {
     display: block;
